@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portfolio</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-black text-neutral-200">
+    <div id="page" class="2xl:max-w-[2200px] 2xl:mx-auto">
+
+    <button id="mobile-open-button" onclick="toggleMobileMenu()" class="z-10 fixed top-4 left-4 text-3xl md:hidden focus:outline-none text-violet-300/70">☰</button>
+    
+    <!-- lateral bar -->
+    <aside id="lateral-bar" class="reveal z-10 hidden md:flex fixed top-4 left-6 bottom-4 flex-col gap-4 items-center p-4 bg-black border border-neutral-800/70 shadow-[0_0_10px_rgba(0,0,0,0.15)] shadow-neutral-800/70">
+        
+        <button id="mobile-close-button" onclick="toggleMobileMenu()" class="text-3xl md:hidden focus:outline-none text-violet-300/70">☰</button>
+
+        <img src="assets/logos/logo-ma.png" alt="Logo" class="h-25 w-25 inline-block mb-6">
+        
+        <nav class="flex flex-col gap-4 text-neutral-500 p-3">
+            <a href="#hero" onclick="scrollToSection('hero')" class="hover:text-gray-300 transition duration-200"><span class="text-neutral-700">01</span><br> INICIO</a>
+            <a href="#about" onclick="scrollToSection('about')" class="hover:text-gray-300 transition duration-200"><span class="text-neutral-700">02</span><br> SOBRE MÍ</a>
+            <a href="#projects" onclick="scrollToSection('projects')" class="hover:text-gray-300 transition duration-200"><span class="text-neutral-700">03</span><br> PROYECTOS</a>
+            <a href="#process" onclick="scrollToSection('process')" class="hover:text-gray-300 transition duration-200"><span class="text-neutral-700">04</span><br> PROCESO</a>
+            <a href="#contact" onclick="scrollToSection('contact')" class="hover:text-gray-300 transition duration-200"><span class="text-neutral-700">05</span><br> CONTACTO</a>
+        </nav>
+
+        <div class="flex flex-col gap-4 mt-auto">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <img src="assets/logos/github-logo.png" alt="GitHub Logo" class="h-6 w-6 hover:scale-110 transition duration-200">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="assets/logos/linkedin-logo.png" alt="LinkedIn Logo" class="h-6 w-6 hover:scale-110 transition duration-200">
+            </a>
+            <a href="mailto:example@example.com">
+                <img src="assets/logos/email-logo.png" alt="Email Logo" class="h-6 w-6 hover:scale-110 transition duration-200">
+            </a>
+        </div>
+
+        <img src="assets/deco/star.png" alt="Star" class="h-20 w-25 mt-7">
+
+    </aside>
+
+    <!-- content -->
+    <main id="content" class="md:ml-48 mx-4 md:mr-6">
+
+        <!-- section 1 -->
+        <section id="hero" class="reveal min-h-screen justify-center flex flex-col px-4 md:px-10 py-16 md:pt-0">
+            <div class="md:ml-10 mt-24 md:mt-30 max-w-3xl flex flex-col gap-4">
+                <p class="text-violet-300/40">WEB DEVELOPER</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]">Código con propósito.<br>Diseño con intención.</h1>
+                <p class="text-lg max-w-sm mt-2 text-neutral-500">Desarrollo experiencias digitales elegantes, funcionales y memorables.</p>
+                <a href="#projects" class="mt-6 inline-block underline underline-offset-5 text-violet-300/50 hover:text-violet-300/80 transition duration-200">Ver Proyectos ⟶</a>
+            </div>
+
+            <div class="mt-24 2xl:mt-32 mb-4 p-5 border border-neutral-800/50 bg-black/30 backdrop-blur-sm">
+                <p class="text-violet-300/40 mb-4"> > PROYECTOS DESTACADOS </p>
+                
+                <!-- cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 2xl:gap-8">
+                    
+                    <div class="group bg-neutral-800/30 border border-neutral-800/50 flex flex-col gap-2 p-4 hover:border-violet-400/30 transition duration-300">
+                        <img src="assets/project-thumbnails/landing-digital.png" alt="Project 1" class="h-40 object-cover my-4 mx-2 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-300">
+                        <h5 class="text-xl">Proyecto 1</h5>
+                        <p class="text-sm text-neutral-500">Descripción breve del proyecto 1.</p>
+                        <a class="underline underline-offset-3 text-violet-300/50 hover:text-violet-300/80 transition duration-200" href="#projects">♱ Más detalles</a>
+                    </div>
+
+                    <div class="group bg-neutral-800/30 border border-neutral-800/50 flex flex-col gap-2 p-4 hover:border-violet-400/30 transition duration-300">
+                        <img src="assets/project-thumbnails/landing-clothing.png" alt="Project 2" class="h-40 object-cover my-4 mx-2 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-300">
+                        <h5 class="text-xl">Proyecto 2</h5>
+                        <p class="text-sm text-neutral-500">Descripción breve del proyecto 2.</p>
+                        <a class="underline underline-offset-3 text-violet-300/50 hover:text-violet-300/80 transition duration-200" href="#projects">♱ Más detalles</a>
+                    </div>
+
+                    <div class="group bg-neutral-800/30 border border-neutral-800/50 flex flex-col gap-2 p-4 hover:border-violet-400/30 transition duration-300">
+                        <img src="assets/project-thumbnails/landing-cv-template.png" alt="Project 3" class="h-40 object-cover my-4 mx-2 opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-300">
+                        <h5 class="text-xl">Proyecto 3</h5>
+                        <p class="text-sm text-neutral-500">Descripción breve del proyecto 3.</p>
+                        <a class="underline underline-offset-3 text-violet-300/50 hover:text-violet-300/80 transition duration-200" href="#projects">♱ Más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 2 -->
+        <section id="about" class="reveal min-h-screen border-b border-neutral-800/50 justify-center flex flex-col px-4 md:px-10 py-16 md:pt-0">
+            <div class="md:ml-10 mt-24 md:mt-30 max-w-3xl flex flex-col gap-4">
+                <p class="text-violet-300/40">02. Sobre Mí</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]">Experiencias digitales donde diseño y funcionalidad convergen.</h1>
+                <p class="text-lg max-w-xl mt-2 text-neutral-500">Soy desarrollador frontend con pasión por crear interfaces intuitivas, accesibles y visualmente impactantes.</p>
+                <p class="text-lg max-w-xl mt-2 text-neutral-500">Me especializo en CSS, Tailwind CSS, JavaScript y tecnologías modernas para construir productos digitales que no solo funcionan, sino que también cuentan historias.</p>
+            </div>
+                
+            <!-- cards -->
+            <div class="mt-24 max-w-4xl 2xl:mt-32 mb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 2xl:gap-8 backdrop-blur-sm">
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <img src="assets/icons/icon1.png" alt="Icon" class="h-16 w-16 opacity-40">
+                    <h5 class="text-xl">Desarrollo Frontend</h5>
+                    <p class="text-sm  text-center text-neutral-500">Interfaces modernas y accesibles.</p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <img src="assets/icons/icon2.png" alt="Icon" class="h-16 w-16 opacity-40">
+                    <h5 class="text-xl">UI / UX</h5>
+                    <p class="text-sm text-center text-neutral-500">Diseño centrado en la experiencia.</p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <img src="assets/icons/icon3.png" alt="Icon" class="h-16 w-16 opacity-40">
+                    <h5 class="text-xl">100%</h5>
+                    <p class="text-sm text-center text-neutral-500">Compromiso total con cada proyecto.</p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <img src="assets/icons/icon7.png" alt="Icon" class="h-16 w-16 opacity-40">
+                    <h5 class="text-xl">Idiomas</h5>
+                    <p class="text-sm text-center text-neutral-500">Español nativo, inglés B2.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 3 -->
+        <section id="projects" class="reveal min-h-screen border-b border-neutral-800/50 justify-center flex flex-col gap-3 px-4 md:px-10 py-16 md:pt-0">
+            <div class="md:ml-10 mt-24 md:mt-30 max-w-4xl grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-8">
+                    <p class="text-violet-300/40">03. Proyectos</p>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-[0.95]">Una colección de ideas convertidas en experiencias.</h2>
+                </div>
+                <div class="flex items-end lg:col-span-4">
+                    <p class="text-sm text-neutral-500">Cada proyecto es una pieza única, diseñada y desarrollada con atención al detalle y propósito.</p>
+                </div>
+            </div>
+
+            <!-- cards -->
+            <div class="flex flex-col mt-6 2xl:mt-12 mb-4 gap-5 xl:gap-2">
+
+                <div class="group grid grid-cols-1 xl:grid-cols-12 bg-neutral-900/20 backdrop-blur-sm border border-neutral-800/50 hover:border-violet-400/30 transition duration-300">
+                    <img src="assets/project-thumbnails/landing-digital.png" alt="Project 1" class="xl:col-span-5 h-50 w-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500">
+                    <div class="flex flex-col gap-2 p-4 border-x border-neutral-800/50 xl:col-span-5 items-center justify-center">
+                        <p class="text-violet-300/40">01</p>
+                        <h5 class="text-xl">Proyecto 1</h5>
+                        <p class="text-sm text-neutral-500">Descripción breve del proyecto 1.</p>
+                    </div>
+                    <a href="#" class="flex flex-col xl:col-span-2 items-center justify-center">
+                        <img src="assets/icons/icon4.png" class="h-18 w-18 opacity-70">
+                        <p class="text-xs text-violet-300/40">Ver proyecto 🡥</p>
+                    </a>
+                </div>
+
+                <div class="group grid grid-cols-1 xl:grid-cols-12 bg-neutral-900/20 backdrop-blur-sm border border-neutral-800/50 hover:border-violet-400/30 transition duration-300">
+                    <img src="assets/project-thumbnails/landing-clothing.png" alt="Project 1" class="xl:order-3 xl:col-span-5 xl: h-50 w-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500">
+                    <div class="flex flex-col gap-2 p-4 border-x border-neutral-800/50 xl:order-2 xl:col-span-5 items-center justify-center">
+                        <p class="text-violet-300/40">02</p>
+                        <h5 class="text-xl">Proyecto 2</h5>
+                        <p class="text-sm text-neutral-500">Descripción breve del proyecto 2.</p>
+                    </div>
+                    <a href="#" class="flex flex-col xl:order-1 xl:col-span-2 items-center justify-center">
+                        <img src="assets/icons/icon5.png" class="h-18 w-18 opacity-70">
+                        <p class="text-xs text-violet-300/40">Ver proyecto 🡥</p>
+                    </a>
+                </div>
+
+                <div class="group grid grid-cols-1 xl:grid-cols-12 bg-neutral-900/20 backdrop-blur-sm border border-neutral-800/50 hover:border-violet-400/30 transition duration-300">
+                    <img src="assets/project-thumbnails/landing-cv-template.png" alt="Project 1" class="xl:col-span-5 h-50 w-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500">
+                    <div class="flex flex-col gap-2 p-4 border-x border-neutral-800/50 xl:col-span-5 items-center justify-center">
+                        <p class="text-violet-300/40">03</p>
+                        <h5 class="text-xl">Proyecto 3</h5>
+                        <p class="text-sm text-neutral-500">Descripción breve del proyecto 3.</p>
+                    </div>
+                    <a href="#" class="flex flex-col xl:col-span-2 items-center justify-center">
+                        <img src="assets/icons/icon6.png" class="h-18 w-18 opacity-70">
+                        <p class="text-xs text-violet-300/40">Ver proyecto 🡥</p>
+                    </a>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- section 4 -->
+        <section id="process" class="reveal min-h-screen justify-center flex flex-col px-4 md:px-10 pt-16 md:pt-0">
+            <div class="md:ml-10 mt-24 md:mt-30 max-w-3xl flex flex-col gap-4">
+                <p class="text-violet-300/40">04. Proceso</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]">Un proceso pensado para crear experiencias únicas.</h1>
+                <p class="text-lg max-w-xl mt-2 text-neutral-500">Cada proyecto sigue un proceso claro y estructurado, donde la comunicación, el diseño y el código trabajan juntos para lograr resultados sólidos.</p>
+            </div>
+
+            <!-- cards -->
+            <div class="mt-24 2xl:mt-32 mb-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 2xl:gap-8 backdrop-blur-sm">
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <p class="text-violet-300/40">01</p>
+                    <img src="assets/icons/icon-investigate.png" alt="Icon" class="h-24 w-24 opacity-40">
+                    <h5 class="text-xl">Investigar</h5>
+                    <p class="text-sm  text-center text-neutral-500">Investigación exhaustiva del problema y el público objetivo.</p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <p class="text-violet-300/40">02</p>
+                    <img src="assets/icons/icon-design.png" alt="Icon" class="h-24 w-24 opacity-40">
+                    <h5 class="text-xl">Diseñar</h5>
+                    <p class="text-sm text-center text-neutral-500">Diseño centrado en la experiencia.</p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <p class="text-violet-300/40">03</p>
+                    <img src="assets/icons/icon-develop.png" alt="Icon" class="h-24 w-24 opacity-40">
+                    <h5 class="text-xl">Desarrollar</h5>
+                    <p class="text-sm text-center text-neutral-500">Código eficiente y mantenible.</p>
+                </div>
+
+                <div class="bg-neutral-900/30 border border-neutral-800/50 flex flex-col items-center gap-2 px-3 py-6 hover:border-violet-400/30 transition duration-300">
+                    <p class="text-violet-300/40">04</p>
+                    <img src="assets/icons/icon-optimize.png" alt="Icon" class="h-24 w-24 opacity-40">
+                    <h5 class="text-xl">Optimizar</h5>
+                    <p class="text-sm text-center text-neutral-500">Mejora del rendimiento y la usabilidad.</p>
+                </div>
+            </div>
+
+            <div class="my-2 p-4 xl:p-0 gap-4 grid grid-cols-1 xl:grid-cols-12 items-center justify-center bg-neutral-900/20 backdrop-blur-sm border border-neutral-800/50 hover:border-violet-400/30 transition duration-300">
+                <div class="hidden xl:inline-block xl:col-span-1">
+                    <img src="assets/icons/icon-compass.png" class="h-18 w-18 opacity-70 xl:border-r xl:border-neutral-800/50">
+                </div>
+                <div class="xl:col-span-1">
+                    <p class="text-violet-300/40">MI ENFOQUE</p>
+                </div>
+                <div class="xl:col-span-9">
+                    <p class="text-sm text-neutral-500">Me enfoco en crear soluciones que no solo funcionen, sino que también comuniquen, conecten y generen impacto.</p>
+                </div>
+                <div class="xl:col-span-1">
+                    <img src="assets/icons/icon1.png" class="h-12 w-12 opacity-70">
+                </div>
+            </div>
+        </section>
+
+        <!-- section 5 -->
+        <section id="contact" class="reveal min-h-screen justify-center flex flex-col px-4 md:px-10 pt-16 md:pt-0">
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-12 2xl:gap-20">
+
+                <!-- column 1 -->
+                <div class="xl:col-span-5">
+                    <div class="md:ml-10 mt-24 md:mt-30 max-w-3xl flex flex-col gap-4">
+                        <p class="text-violet-300/40">05. Contacto</p>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]">Construyamos algo memorable</h1>
+                        <p class="text-lg max-w-xl mt-2 text-neutral-500">Estoy disponible para proyectos freelance, colaboraciones creativas y oportunidades que generen impacto.</p>
+                    </div>
+
+                    <div class="my-24 p-6 grid grid-cols-1 xl:grid-cols-3 items-center justify-center border border-neutral-800/50 bg-black/30 backdrop-blur-sm hover:scale-105 transition duration-300">
+                        <div class="flex flex-col items-center justify-center xl:border-r xl:border-neutral-800/50">
+                            <img src="assets/icons/icon-triangle.png" class="h-18 w-18 opacity-70">
+                            <h5>Disponibilidad</h5>
+                            <p class="text-xs text-neutral-500">Inmediata</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center xl:border-r xl:border-neutral-800/50">
+                            <img src="assets/icons/icon-globe.png" class="h-18 w-18 opacity-70">
+                            <h5>Ubicación</h5>
+                            <p class="text-xs text-neutral-500">Remoto / Global</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <img src="assets/icons/icon-star.png" class="h-18 w-18 opacity-70">
+                            <h5>Colaboraciones</h5>
+                            <p class="text-xs text-neutral-500">Abierto a ideas</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-neutral-500">© 2026 Todos los derechos reservados.</p>
+                </div>
+
+                <!-- column 2 -->
+                <div class="xl:col-span-7">
+                    <div class="p-2 lg:p-8 lg:ml-10 mt-24 flex flex-col gap-4 border border-neutral-800/50 bg-black/30 backdrop-blur-sm">
+                        <div>
+                            <p class="text-violet-300/60 mb-4"> ♱ ENVÍAME UN MENSAJE</p>
+                        </div>
+                        <div>
+                            <p>NOMBRE</p>
+                            <input type="text" placeholder="Tu nombre" class="text-sm w-full p-2 border border-neutral-800/50 bg-black/30 backdrop-blur-sm text-neutral-200 outline-none">
+                        </div>
+                        <div>
+                            <p>EMAIL</p>
+                            <input type="email" placeholder="Tu email" class="text-sm w-full p-2 border border-neutral-800/50 bg-black/30 backdrop-blur-sm text-neutral-200 outline-none">
+                        </div>
+                        <div>
+                            <p>PROYECTO / ASUNTO</p>
+                            <input type="text" placeholder="Tu proyecto o asunto" class="text-sm w-full p-2 border border-neutral-800/50 text-neutral-200 outline-none">
+                        </div>
+                        <div>
+                            <p>MENSAJE</p>
+                            <textarea placeholder="Tu mensaje" class="text-sm w-full p-2 border border-neutral-800/50 text-neutral-200 outline-none"></textarea>
+                        </div>
+                        <button class="mt-4 p-2 border text-violet-300/60 border-violet-300/30 hover:border-violet-300/50  hover:text-violet-300/80 hover:shadow-lg transition duration-200 max-w-xs">Enviar</button>
+                    </div>
+
+                    <div class="p-2 lg:p-8 lg:ml-10 xl:max-w-md flex flex-col gap-4 mt-12 border border-neutral-800/50 bg-black/30 backdrop-blur-sm">
+                            <p class="text-violet-300/40 mb-4">⛦ OTROS MEDIOS</p>
+                            <a class="text-center grid grid-cols-12 group" href="https://github.com/pillz4xngxl" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/logos/github-logo.png" alt="GitHub Logo" class="col-span-1 h-6 w-6">
+                                <p class="text-sm text-neutral-300 col-span-2 group-hover:text-white transition duration-200">github</p>
+                                <p class="text-sm text-neutral-500 col-span-8 group-hover:text-white transition duration-200">github.com/pillz4xngxl</p>
+                                <p class="text-sm text-neutral-500 col-span-1 group-hover:text-white transition duration-200">🔗</p>
+                            </a>
+                            <a class="text-center grid grid-cols-12 group" href="https://www.linkedin.com/in/pillz4xngxl" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/logos/linkedin-logo.png" alt="LinkedIn Logo" class="col-span-1 h-6 w-6">
+                                <p class="text-sm text-neutral-300 col-span-2 group-hover:text-white transition duration-200">linkedin</p>
+                                <p class="text-sm text-neutral-500 col-span-8 group-hover:text-white transition duration-200">linkedin.com/in/pillz4xngxl</p>
+                                <p class="text-sm text-neutral-500 col-span-1 group-hover:text-white transition duration-200">🔗</p>
+                            </a>
+                            <a class="text-center grid grid-cols-12 group" href="mailto:your-email@example.com" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/logos/email-logo.png" alt="Email Logo" class="col-span-1 h-6 w-6">
+                                <p class="text-sm text-neutral-300 col-span-2 group-hover:text-white transition duration-200">email</p>
+                                <p class="text-sm text-neutral-500 col-span-8 group-hover:text-white transition duration-200">your-email@example.com</p>
+                                <p class="text-sm text-neutral-500 col-span-1 group-hover:text-white transition duration-200">🔗</p>
+                            </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

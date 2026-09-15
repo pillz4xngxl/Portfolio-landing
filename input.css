@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Cloister Black";
+  src: url("./assets/fonts/CloisterBlack.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-title: "Cloister Black", serif;
+  --font-subtitle: "Cinzel", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+::selection {
+  background-color: #8672c280;
+  color: white;
+}
+
+/* anims */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+h1, h2 {
+  font-family: var(--font-title);
+}
+
+h4, h5 {
+  font-family: var(--font-subtitle);
+}
+
+a, p {
+  font-family: var(--font-mono);
+}
+
+#content #page {
+  @media (width < 40rem /* 640px */) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#hero {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+    url("assets/background/img1.png");
+}
+
+#about {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+    url("assets/background/img2.png");
+}
+
+#projects {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+    url("assets/background/img3.png");
+}
+
+#process {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,0)),
+    url("assets/background/img4.png");
+}
+
+#contact {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.35)),
+    url("assets/img1.png");
+}
