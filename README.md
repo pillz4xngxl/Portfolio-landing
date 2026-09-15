@@ -21,4 +21,4 @@ A responsive personal portfolio landing page designed and developed to showcase 
 
 ## URL 
 
-https://pillz4xngxl.github.io/portfolio-landing/
+https://pillz4xngxl.github.io/Portfolio-landing/
